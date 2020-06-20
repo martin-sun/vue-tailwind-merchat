@@ -17,6 +17,9 @@
 </script>
 
 <style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 #app {
   color: #2c3e50;
   height: 100%;
