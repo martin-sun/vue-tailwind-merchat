@@ -1,5 +1,19 @@
 module.exports = {
   publicPath: '',
+  devServer: {
+    proxy: {
+      '/api/applet/robot': {
+        target: 'https://beta.excelle08.cn',
+        secure: false,
+        changeOrigin: true
+      },
+      '/api/applet': {
+          target: 'https://api.woohelps.com',
+          secure: false,
+          changeOrigin: true
+      },
+    }
+  },
   css: {
     loaderOptions: {
       postcss: {
