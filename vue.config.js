@@ -8,7 +8,7 @@ module.exports = {
         changeOrigin: true
       },
       '/api/applet': {
-          target: 'https://api.woohelps.com',
+          target: 'https://cndev.woohelps.com',
           secure: false,
           changeOrigin: true
       },

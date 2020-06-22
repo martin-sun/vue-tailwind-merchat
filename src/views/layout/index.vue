@@ -38,24 +38,6 @@
               <i class="fa fa-building-o" aria-hidden="true"></i>{{shop.name}}
             </el-menu-item>
           </el-submenu>
-          <el-submenu index="4">
-            <template slot="title"><i class="el-icon-date" aria-hidden="true"></i>团购管理</template>
-            <el-menu-item v-for="shop in shopInfo" :key="shop.id" :index="'/shop/' + shop.id + '/group/list'">
-              <i class="fa fa-building-o" aria-hidden="true"></i>{{shop.name}}
-            </el-menu-item>
-          </el-submenu>
-          <el-submenu index="5">
-            <template slot="title"><i class="fa fa-android" aria-hidden="true"></i>微信智能小海</template>
-            <el-menu-item v-if="shop.enable_robot === 1" v-for="shop in shopInfo" :key="shop.id" :index="'/shop/' + shop.id + '/robot'">
-              <i class="fa fa-building-o" aria-hidden="true"></i>{{shop.name}}
-            </el-menu-item>
-          </el-submenu>
-          <el-menu-item index="/groups" v-if="parseInt(userInfo.role) < 3">
-            <i class="fa fa-users" aria-hidden="true"></i>群导航管理
-          </el-menu-item>
-          <el-menu-item index="/views" v-if="parseInt(userInfo.role) < 3">
-            <i class="fa fa-users" aria-hidden="true"></i>景点管理
-          </el-menu-item>
         </el-menu>
       </div>
       <section class="content-container">

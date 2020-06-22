@@ -2,10 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import ElementUI from 'element-ui'
 import * as filters from './utils/filter'
 
 
 Vue.config.productionTip = false
+
+Vue.use(ElementUI)
 
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
