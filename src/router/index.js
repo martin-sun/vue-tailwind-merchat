@@ -4,10 +4,15 @@ import { getToken, removeToken } from '@/utils/auth.js'
 import store from '@/store'
 import { fetchUserInfo, fetchUserShopInfo } from '@/store/api.js'
 
-import Login from '@/views/login.vue'
-
 
 Vue.use(Router)
+
+import Layout from '@/views/layout/index.vue'
+import Login from '@/views/login.vue'
+import ShopInfo from '@/views/shop/info.vue'
+import ShopOrderList from '@/views/shop/order-list.vue'
+
+
 
 const router = new Router({
   mode: 'history',
@@ -15,6 +20,17 @@ const router = new Router({
     {
       path: '/',
       redirect: '/dashboard'
+    },
+    {
+      path: '/dashboard',
+      component: Layout,
+      children: [{
+        path: '/shop/:sid/info/',
+        component: ShopInfo
+      }, {
+        path: '/shop/:sid/orders/list',
+        component: ShopOrderList
+      }]
     },
     {
       path: '/login',
